@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Competencia de Sopa de Letras - Método Ishikawa</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital@0;1&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Resolución de Problemas con el Método de Ishikawa</h1>
+            <div class="game-info">
+                <span id="team-display"></span>
+                <span id="timer-display">Tiempo: 00:00</span>
+            </div>
+        </header>
+
+        <main class="game-area">
+            <div id="grid-container"></div>
+            <div id="words-container">
+                <h2>Palabras a Encontrar:</h2>
+                <ul id="word-list"></ul>
+            </div>
+        </main>
+    </div>
+
+    <div id="win-modal" class="modal-hidden">
+        <div class="modal-content">
+            <h2>¡Felicidades, <span id="winning-team"></span>!</h2>
+            <p>Han completado la sopa de letras en un tiempo de:</p>
+            <p id="final-time" class="final-time-display"></p>
+            <p class="instruction">¡Toma una captura de pantalla y compártela para declarar tu victoria!</p>
+            <button onclick="location.reload()">Jugar de Nuevo</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

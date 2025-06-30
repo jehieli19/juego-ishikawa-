@@ -1,0 +1,177 @@
+/* Inspirado en la estética de tu presentación */
+body {
+    font-family: 'Libre Baskerville', serif;
+    background-color: #f4f2ef;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 100%;
+    max-width: 900px;
+    background-color: #ffffff;
+    border: 2px solid #333;
+    padding: 2rem;
+    box-shadow: 5px 5px 0px #ddd;
+}
+
+header {
+    text-align: center;
+    border-bottom: 2px solid #333;
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+.game-info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.2rem;
+    font-style: italic;
+    margin-top: 1rem;
+    padding: 0 1rem;
+}
+
+.game-area {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+#grid-container {
+    display: grid;
+    grid-template-columns: repeat(15, 1fr); /* Ajustado para el tamaño de la cuadrícula */
+    border: 2px solid #333;
+    user-select: none;
+}
+
+.grid-cell {
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    border: 1px solid #eee;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.grid-cell.selecting {
+    background-color: #f7e4a9; /* Amarillo para selección */
+}
+
+.grid-cell.found {
+    background-color: #a9d8f7; /* Azul para palabra encontrada */
+    color: #000;
+    font-weight: bold;
+}
+
+#words-container {
+    width: 250px;
+    border-left: 2px solid #333;
+    padding-left: 2rem;
+}
+
+#word-list {
+    list-style: none;
+    padding: 0;
+    font-size: 1.1rem;
+}
+
+#word-list li {
+    margin-bottom: 0.5rem;
+    transition: all 0.3s;
+}
+
+#word-list li.found {
+    text-decoration: line-through;
+    color: #999;
+    font-style: italic;
+}
+
+/* Estilos del Modal de Victoria */
+.modal-hidden {
+    display: none;
+}
+
+#win-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: #f4f2ef;
+    padding: 40px;
+    border-radius: 5px;
+    text-align: center;
+    border: 3px solid #333;
+    box-shadow: 8px 8px 0px #555;
+    position: relative;
+}
+
+.final-time-display {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #d9534f;
+    margin: 10px 0;
+}
+
+.instruction {
+    font-style: italic;
+    color: #555;
+    margin-top: 20px;
+}
+
+#win-modal button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-family: 'Libre Baskerville', serif;
+    font-size: 1rem;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#win-modal button:hover {
+    background-color: #555;
+}
+
+@media (max-width: 768px) {
+    .game-area {
+        flex-direction: column;
+    }
+    #words-container {
+        width: 100%;
+        border-left: none;
+        padding-left: 0;
+        border-top: 2px solid #333;
+        padding-top: 1rem;
+    }
+     .grid-cell {
+        width: 22px;
+        height: 22px;
+        font-size: 0.8rem;
+    }
+}
